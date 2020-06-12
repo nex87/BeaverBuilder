@@ -1,0 +1,233 @@
+/* ЦВЕТОВОЕ ОФОРМЛЕНИЕ SECTION */
+._bg-white {
+    background-color: $main-color-white;
+}
+._bg-blue {
+    background-color: $main-color_blue;
+}
+._bg-gray {
+    background-color: $main-color_gray;
+}
+
+/* 2. БЛОК SLIDER */
+.slider {
+    position: relative;
+        width: 100%;
+        height: 248px;
+        overflow: hidden;
+        margin-top: 30px;
+        border-top: 3px solid $main-color-gray;
+        &__block {
+            display: flex;
+            width: 100%;
+            height: 248px;
+        }
+        &__caption {
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        &__button {
+            position: absolute;
+            top: 110px;
+            margin-top: 10px;
+            font-family: Helvetica, arial, serif;
+            color: black;
+            text-align:center;
+            font-size:15px;
+            cursor: pointer;
+            text-decoration: none;
+            padding:5px;
+            border: 1px solid rgba(0,0,0,0.5);
+            border-bottom: 3px solid rgba(0,0,0,0.5);
+            border-radius: 3px;
+            -moz-border-radius: 3px;
+            -webkit-border-radius: 3px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.5), /* Exterior Shadow */
+              inset 0 1px rgba(255,255,255,0.3), /* Top light Line */
+              inset 0 10px rgba(255,255,255,0.2), /* Top Light Shadow */
+              inset 0 10px 20px rgba(255,255,255,0.25), /* Sides Light Shadow */
+              inset 0 -15px 30px rgba(0,0,0,0.3); /* Dark Background */
+            -webkit-box-shadow: 0 2px 8px rgba(0,0,0,0.5),
+              inset 0 1px rgba(255,255,255,0.3),
+              inset 0 10px rgba(255,255,255,0.2),
+              inset 0 10px 20px rgba(255,255,255,0.25),
+              inset 0 -15px 30px rgba(0,0,0,0.3);
+            -moz-box-shadow: 0 2px 8px rgba(0,0,0,0.5),
+              inset 0 1px rgba(255,255,255,0.3),
+              inset 0 10px rgba(255,255,255,0.2),
+              inset 0 10px 20px rgba(255,255,255,0.25),
+              inset 0 -15px 30px rgba(0,0,0,0.3);
+        }
+        &__button:hover {
+            opacity: 0.7;
+            filter: alpha(opacity=70);
+            -moz-opacity:0.7;
+            -khtml-opacity: 0.7;
+        }
+        &__button-left {
+            left: 10px;
+        }
+        &__button-right {
+            right: 10px;
+        }
+
+}
+._slide-1 {
+    background-image: url(storage/images/2-slider.jpg);
+}
+._slide-2 {
+    background-image: url(storage/images/2-slider-bgBlue.jpg);
+}
+._slide-3 {
+    background-image: url(storage/images/2-slider-bgGreen.jpg);
+}
+._slide-4 {
+    background-image: url(storage/images/2-slider-bgPink.jpg);
+}
+._slide-5 {
+    background-image: url(storage/images/2-slider-bgYellow.jpg);
+}
+
+/* 3. БЛОК CATALOG */
+.catalog {
+    position: relative;
+        &__caption {
+            @include caption;
+        }
+        &__block {
+            @include section-block; 
+        }
+        &__item {
+            border: 1px solid $main-color-white;  
+            border-radius: 5px;
+            background-color: $main-color-white;
+            &:hover {
+                border: 1px solid $main-color_yellow;
+            }
+        }
+        &__title {
+                text-align: center;
+                font-size: 5vh;
+                
+        }
+        &__logo {
+            max-width: 100%;
+        }
+
+}
+
+/* 4. БЛОК ADVANT */
+.advant {
+    position: relative;
+        &__caption {
+            @include caption;
+        }
+        &__block {
+            @include section-block;
+            .advant__item {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                border: 1px solid $main-color-white;
+                border-radius: 5px;
+                &:hover {
+                    border: 1px solid $main-color_yellow;
+                }
+            }
+        }
+        &__title {
+            text-align: center;
+        }
+        &__img {
+            max-width: 40%;
+        }
+        &__text {
+            width: 90%;
+        }
+}
+
+/* 5. БЛОК BRANDS */ 
+.brands {
+    position: relative;
+        &__caption {
+            @include caption;
+        }
+        &__block {
+            @include section-block (space-around, center, nowrap);
+        }
+        &__brand {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+}
+
+/* 6. БЛОК COMMENTS */
+.comments {
+    position: relative;
+        &__caption {
+            @include caption;
+        }
+        &__block {
+            @include section-block;
+        }
+        &__comment {
+            display: flex;
+            width: 40%;
+        }
+        &__image {
+            display: block;
+            width: 100%;
+            margin: auto;   
+            top: 1px;
+            left: 1px;
+        }
+        &__text-block {
+            flex-direction: column;
+            margin-left: 10px;
+        }
+        &__text {
+            display: block;
+            font-style: italic;
+            margin-bottom: 0;
+        }
+}
+
+/* 7. Блок NEWS */
+.news {
+    position: relative;
+        &__caption {
+            @include caption;
+        }
+        &__block {
+            @include section-block;
+        }
+        &__article {
+            display: flex;
+            flex-direction: row;
+            position: relative;
+            width: 45%;
+            height: 100%;
+            padding: 10px;
+        }
+        &__image {
+            display: block;
+            height: 80%;
+        }
+        &__text-block {
+            display: flex;
+            flex-direction: column;
+            background-color: $main-color_blue;
+            margin-left: 10px;
+            width: 70%;
+            height: 60%;
+        }
+        &__title {
+            margin-bottom: 0;
+        }
+        &__text {
+            font-style: italic;
+        }
+}
